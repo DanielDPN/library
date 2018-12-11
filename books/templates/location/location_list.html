@@ -1,0 +1,11 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+    <a href="{% url 'location_new' %}">New Location</a>
+    {% for location in locations %}
+        <div class="post">
+            <h1><a href="{% url 'location_detail' pk=location.pk %}">{{ location.locator }}</a></h1>
+            <p>{{ location.book }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

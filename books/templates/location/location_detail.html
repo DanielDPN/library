@@ -1,0 +1,9 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+     <div class="post">
+         <a class="btn btn-default" href="{% url 'location_edit' pk=loc.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+         <h1>{{ loc.locator }}</h1>
+         <p>{{ loc.book }}</p>
+     </div>
+{% endblock %}

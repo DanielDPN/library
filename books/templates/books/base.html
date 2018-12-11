@@ -1,0 +1,36 @@
+{% load static %}
+<html>
+<head>
+    <title>My Library</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/books.css' %}">
+</head>
+<body>
+<div class="page-header">
+    <div class="row">
+        <div class="col-md-6">
+            <h1><a href="/">My Library</a></h1>
+        </div>
+        <div class="col-md-6">
+            <a href="{% url 'book_new' %}" class="top-menu" title="New Book"><span
+                    class="glyphicon glyphicon-plus"></span></a>
+        </div>
+
+        <div class="col-md-6">
+            <a href="{% url 'location_list' %}" class="top-menu" title="New Location"><span
+                    class="glyphicon glyphicon-list"></span></a>
+        </div>
+    </div>
+</div>
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
